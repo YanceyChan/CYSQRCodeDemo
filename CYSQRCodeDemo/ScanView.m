@@ -52,7 +52,27 @@
 }
 
 - (void)drawRect:(CGRect)rect {
-    [self fourCornerFrame];
+    [self defaultFrame];
+}
+
+#pragma mark - 方框框
+- (void)defaultFrame{
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGMutablePathRef path = CGPathCreateMutable();
+    
+    CGPathMoveToPoint(path, NULL, 0, 0);
+    CGPathAddLineToPoint(path, NULL, VIEW_WIDTH, 0);
+    CGPathAddLineToPoint(path, NULL, VIEW_WIDTH, VIEW_HEIGHT);
+    CGPathAddLineToPoint(path, NULL, 0, VIEW_HEIGHT);
+    CGPathAddLineToPoint(path, NULL, 0, 0);
+
+    
+    
+    CGContextAddPath(ctx, path);
+    [SCANVIEW_FRAME_COLOR set];
+    CGContextSetLineWidth(ctx, SCANVIEW_FRAME_LINEWIDTH);
+    CGContextStrokePath(ctx);
+    CGPathRelease(path);
 }
 
 #pragma mark - 四角直角框
