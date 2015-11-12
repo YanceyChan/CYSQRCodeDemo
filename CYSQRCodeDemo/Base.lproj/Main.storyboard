@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zch-bN-JOT">
+                                <rect key="frame" x="316" y="294" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Mft-Aj-weD">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="133"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="30" id="SHP-WD-nQB"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Mft-Aj-weD"/>
+                                        <exclude reference="SHP-WD-nQB"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Mft-Aj-weD"/>
+                                        <include reference="SHP-WD-nQB"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="jumpToQRView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lEI-eX-jsn"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QRCode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v15-AN-2jX">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="kA5-3Q-cFW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="kA5-3Q-cFW"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="kA5-3Q-cFW"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Zch-bN-JOT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="103" id="bLm-Rx-qDH">
+                                <variation key="heightClass=regular-widthClass=compact" constant="94"/>
+                            </constraint>
+                            <constraint firstItem="Zch-bN-JOT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ghd-59-zyn"/>
+                            <constraint firstItem="v15-AN-2jX" firstAttribute="top" secondItem="Zch-bN-JOT" secondAttribute="bottom" constant="29" id="ib7-aS-BLv"/>
+                            <constraint firstItem="v15-AN-2jX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="klS-Vv-sWu"/>
+                            <constraint firstItem="v15-AN-2jX" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="smm-zA-Rpb"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="v15-AN-2jX"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="ib7-aS-BLv"/>
+                                <exclude reference="klS-Vv-sWu"/>
+                                <exclude reference="smm-zA-Rpb"/>
+                                <exclude reference="bLm-Rx-qDH"/>
+                                <exclude reference="ghd-59-zyn"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="v15-AN-2jX"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="ib7-aS-BLv"/>
+                                <include reference="klS-Vv-sWu"/>
+                                <include reference="smm-zA-Rpb"/>
+                                <include reference="bLm-Rx-qDH"/>
+                                <include reference="ghd-59-zyn"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="infoLabel" destination="v15-AN-2jX" id="19o-dT-sq1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="366" y="333.75"/>
+        </scene>
+    </scenes>
+</document>
