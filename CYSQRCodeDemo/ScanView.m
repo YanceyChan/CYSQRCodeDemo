@@ -52,7 +52,8 @@
 }
 
 - (void)drawRect:(CGRect)rect {
-    [self defaultFrame];
+//    [self defaultFrame];
+    [self fourCornerFrame];
 }
 
 #pragma mark - 方框框
