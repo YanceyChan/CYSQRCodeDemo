@@ -8,9 +8,11 @@
 
 #import "ViewController.h"
 #import "QRCodeViewController.h"
-
-@interface ViewController ()<QRCodeViewControllerDelegate>
+#import "QRCodeGenerator.h"
+@interface ViewController ()<QRCodeViewControllerDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *infoLabel;
+@property (weak, nonatomic) IBOutlet UITextField *qrTextField;
+@property (weak, nonatomic) IBOutlet UIImageView *qrCodeImageView;
 @end
 
 @implementation ViewController
@@ -18,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
-    
+    self.qrTextField.delegate = self;
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -38,4 +40,9 @@
     self.infoLabel.text = result;
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    self.qrCodeImageView.image = [QRCodeGenerator qrImageForString:self.qrTextField.text imageSize:360 Topimg:nil withColor:[UIColor grayColor]];
+    [self.qrTextField resignFirstResponder];
+    return YES;
+}
 @end

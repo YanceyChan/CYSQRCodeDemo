@@ -41,9 +41,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithRed:0.2554 green:0.2554 blue:0.2554 alpha:1.0];
     self.captureSession = nil;
+    //    //添加扫描view 以及 线框效果
     
+    [self composeQRCodeCatchedUI];
     [self beginSCanQRCode];
     
     // Do any additional setup after loading the view.
@@ -96,6 +98,7 @@
     //用captureDevice创建输入流
     AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:captureDevice error:&error];
     if (!input) {
+        //无输入则不继续下面操作
         NSLog(@"%@", [error localizedDescription]);
         return;
     }
@@ -147,9 +150,7 @@
                                                      SCANVIEW_HEIGHT/VIEW_HEIGHT,
                                                      SCANVIEW_WITH/VIEW_WIDTH);
 
-//    //添加扫描view 以及 线框效果
-    
-    [self composeQRCodeCatchedUI];
+
     
     //开始扫描
     [self.captureSession startRunning];

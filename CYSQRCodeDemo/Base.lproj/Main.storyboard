@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -63,20 +64,61 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aHh-m9-al5">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="aH9-7r-Dj0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="aH9-7r-Dj0"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="aH9-7r-Dj0"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hfl-i4-cVx">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hfl-i4-cVx" secondAttribute="height" multiplier="1:1" id="eVL-qf-ppw"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="eVL-qf-ppw"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="eVL-qf-ppw"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="hfl-i4-cVx" firstAttribute="centerX" secondItem="aHh-m9-al5" secondAttribute="centerX" id="Dff-KG-fpt"/>
+                            <constraint firstItem="aHh-m9-al5" firstAttribute="centerX" secondItem="v15-AN-2jX" secondAttribute="centerX" id="TO0-tp-cOz"/>
                             <constraint firstItem="Zch-bN-JOT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="103" id="bLm-Rx-qDH">
                                 <variation key="heightClass=regular-widthClass=compact" constant="94"/>
                             </constraint>
+                            <constraint firstItem="aHh-m9-al5" firstAttribute="top" secondItem="v15-AN-2jX" secondAttribute="bottom" constant="8" symbolic="YES" id="cAx-4h-EIH"/>
                             <constraint firstItem="Zch-bN-JOT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ghd-59-zyn"/>
                             <constraint firstItem="v15-AN-2jX" firstAttribute="top" secondItem="Zch-bN-JOT" secondAttribute="bottom" constant="29" id="ib7-aS-BLv"/>
                             <constraint firstItem="v15-AN-2jX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="klS-Vv-sWu"/>
+                            <constraint firstItem="hfl-i4-cVx" firstAttribute="top" secondItem="aHh-m9-al5" secondAttribute="bottom" constant="8" id="sVI-uA-BjP"/>
                             <constraint firstItem="v15-AN-2jX" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="smm-zA-Rpb"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="hfl-i4-cVx" secondAttribute="leading" id="ui4-gP-rwA"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="v15-AN-2jX"/>
+                                <exclude reference="aHh-m9-al5"/>
+                                <exclude reference="hfl-i4-cVx"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="ib7-aS-BLv"/>
@@ -84,11 +126,18 @@
                                 <exclude reference="smm-zA-Rpb"/>
                                 <exclude reference="bLm-Rx-qDH"/>
                                 <exclude reference="ghd-59-zyn"/>
+                                <exclude reference="Dff-KG-fpt"/>
+                                <exclude reference="sVI-uA-BjP"/>
+                                <exclude reference="ui4-gP-rwA"/>
+                                <exclude reference="TO0-tp-cOz"/>
+                                <exclude reference="cAx-4h-EIH"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="v15-AN-2jX"/>
+                                <include reference="aHh-m9-al5"/>
+                                <include reference="hfl-i4-cVx"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="ib7-aS-BLv"/>
@@ -96,11 +145,18 @@
                                 <include reference="smm-zA-Rpb"/>
                                 <include reference="bLm-Rx-qDH"/>
                                 <include reference="ghd-59-zyn"/>
+                                <include reference="Dff-KG-fpt"/>
+                                <include reference="sVI-uA-BjP"/>
+                                <include reference="ui4-gP-rwA"/>
+                                <include reference="TO0-tp-cOz"/>
+                                <include reference="cAx-4h-EIH"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="infoLabel" destination="v15-AN-2jX" id="19o-dT-sq1"/>
+                        <outlet property="qrCodeImageView" destination="hfl-i4-cVx" id="VPP-26-6hx"/>
+                        <outlet property="qrTextField" destination="aHh-m9-al5" id="Jp7-kL-rBQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
