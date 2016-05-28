@@ -173,6 +173,7 @@
     [self.scanView removeFromSuperview];
     
     NSString *result = resultCode?:@"";
+    NSLog(@"%@", result);
     [self.delegate finishedScanningWithResult:result];
     [self dismissViewControllerAnimated:YES completion:nil];
 

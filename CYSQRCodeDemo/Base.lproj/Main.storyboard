@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -51,7 +51,7 @@
                                     <constraint firstAttribute="height" constant="21" id="kA5-3Q-cFW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -121,16 +121,16 @@
                                 <exclude reference="hfl-i4-cVx"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="TO0-tp-cOz"/>
+                                <exclude reference="cAx-4h-EIH"/>
                                 <exclude reference="ib7-aS-BLv"/>
                                 <exclude reference="klS-Vv-sWu"/>
                                 <exclude reference="smm-zA-Rpb"/>
-                                <exclude reference="bLm-Rx-qDH"/>
-                                <exclude reference="ghd-59-zyn"/>
                                 <exclude reference="Dff-KG-fpt"/>
                                 <exclude reference="sVI-uA-BjP"/>
                                 <exclude reference="ui4-gP-rwA"/>
-                                <exclude reference="TO0-tp-cOz"/>
-                                <exclude reference="cAx-4h-EIH"/>
+                                <exclude reference="bLm-Rx-qDH"/>
+                                <exclude reference="ghd-59-zyn"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -140,16 +140,16 @@
                                 <include reference="hfl-i4-cVx"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="TO0-tp-cOz"/>
+                                <include reference="cAx-4h-EIH"/>
                                 <include reference="ib7-aS-BLv"/>
                                 <include reference="klS-Vv-sWu"/>
                                 <include reference="smm-zA-Rpb"/>
-                                <include reference="bLm-Rx-qDH"/>
-                                <include reference="ghd-59-zyn"/>
                                 <include reference="Dff-KG-fpt"/>
                                 <include reference="sVI-uA-BjP"/>
                                 <include reference="ui4-gP-rwA"/>
-                                <include reference="TO0-tp-cOz"/>
-                                <include reference="cAx-4h-EIH"/>
+                                <include reference="bLm-Rx-qDH"/>
+                                <include reference="ghd-59-zyn"/>
                             </mask>
                         </variation>
                     </view>
