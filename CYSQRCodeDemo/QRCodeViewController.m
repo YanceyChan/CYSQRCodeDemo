@@ -13,8 +13,8 @@
 
 #define VIEW_WIDTH  [UIScreen  mainScreen].bounds.size.width
 #define VIEW_HEIGHT [UIScreen  mainScreen].bounds.size.height
-#define TINTCOLOR_ALPHA        0.2                           //浅色透明度
-#define DARKCOLOR_ALPHA        0.5                           //深色透明度
+#define TINTCOLOR_ALPHA        0.5                           //浅色透明度
+#define DARKCOLOR_ALPHA        0.8                           //深色透明度
 #define SCANVIEW_WITH          300.f
 #define SCANVIEW_HEIGHT        300.f
 #define QRVIEW_DISTANCE_TOP    70.f
@@ -45,9 +45,9 @@
     self.captureSession = nil;
     //    //添加扫描view 以及 线框效果
     
-    [self composeQRCodeCatchedUI];
-    [self beginSCanQRCode];
     
+    [self beginSCanQRCode];
+    [self composeQRCodeCatchedUI];
     // Do any additional setup after loading the view.
 }
 
