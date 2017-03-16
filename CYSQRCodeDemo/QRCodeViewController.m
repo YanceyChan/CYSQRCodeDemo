@@ -134,6 +134,7 @@
                                                   AVMetadataObjectTypeCode93Code,
                                                   AVMetadataObjectTypeCode39Code,
                                                   AVMetadataObjectTypeUPCECode,
+                                                  AVMetadataObjectTypeCode39Mod43Code,
                                                   nil]];
     
     //实例化预览图层
@@ -202,7 +203,8 @@
             [[metadataObj type] isEqualToString:AVMetadataObjectTypeEAN8Code] ||
             [[metadataObj type] isEqualToString:AVMetadataObjectTypeCode93Code] ||
             [[metadataObj type] isEqualToString:AVMetadataObjectTypeCode39Code] ||
-            [[metadataObj type] isEqualToString:AVMetadataObjectTypeUPCECode]) {
+            [[metadataObj type] isEqualToString:AVMetadataObjectTypeUPCECode] ||
+            [[metadataObj type] isEqualToString:AVMetadataObjectTypeCode39Mod43Code]) {
             [self performSelectorOnMainThread:@selector(stopScanQRCode:) withObject:[metadataObj stringValue] waitUntilDone:YES];
             
         }
