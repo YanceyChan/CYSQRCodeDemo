@@ -125,7 +125,7 @@
     //设置代理
     [captureMetadtaOutput setMetadataObjectsDelegate:self queue:dispatchQueue];
     
-    //设置输出媒体数据类型为QRCode
+    //设置输出媒体数据类型为QRCode、2017.3.16添加条形码功能
     [captureMetadtaOutput setMetadataObjectTypes:[NSArray arrayWithObjects:
                                                   AVMetadataObjectTypeQRCode,
                                                   AVMetadataObjectTypeEAN13Code,
@@ -138,7 +138,7 @@
                                                   nil]];
     
     //实例化预览图层
-    self.videoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc]initWithSession:self.captureSession];
+    self.videoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.captureSession];
     
     //设置预览图层填充方式
     [self.videoPreviewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
