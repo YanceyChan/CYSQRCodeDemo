@@ -126,7 +126,15 @@
     [captureMetadtaOutput setMetadataObjectsDelegate:self queue:dispatchQueue];
     
     //设置输出媒体数据类型为QRCode
-    [captureMetadtaOutput setMetadataObjectTypes:[NSArray arrayWithObjects:AVMetadataObjectTypeQRCode, nil]];
+    [captureMetadtaOutput setMetadataObjectTypes:[NSArray arrayWithObjects:
+                                                  AVMetadataObjectTypeQRCode,
+                                                  AVMetadataObjectTypeEAN13Code,
+                                                  AVMetadataObjectTypeEAN8Code,
+                                                  AVMetadataObjectTypeCode128Code,
+                                                  AVMetadataObjectTypeCode93Code,
+                                                  AVMetadataObjectTypeCode39Code,
+                                                  AVMetadataObjectTypeUPCECode,
+                                                  nil]];
     
     //实例化预览图层
     self.videoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc]initWithSession:self.captureSession];
@@ -188,7 +196,13 @@
     if (metadataObjects != nil && [metadataObjects count] > 0) {
         AVMetadataMachineReadableCodeObject *metadataObj = [metadataObjects objectAtIndex:0];
         //判断回传的数据类型
-        if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeQRCode]) {
+        if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeQRCode] ||
+            [[metadataObj type] isEqualToString:AVMetadataObjectTypeCode128Code] ||
+            [[metadataObj type] isEqualToString:AVMetadataObjectTypeEAN13Code] ||
+            [[metadataObj type] isEqualToString:AVMetadataObjectTypeEAN8Code] ||
+            [[metadataObj type] isEqualToString:AVMetadataObjectTypeCode93Code] ||
+            [[metadataObj type] isEqualToString:AVMetadataObjectTypeCode39Code] ||
+            [[metadataObj type] isEqualToString:AVMetadataObjectTypeUPCECode]) {
             [self performSelectorOnMainThread:@selector(stopScanQRCode:) withObject:[metadataObj stringValue] waitUntilDone:YES];
             
         }
